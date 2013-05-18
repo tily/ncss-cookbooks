@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "ncss-cookbooks"
   gem.homepage = "http://github.com/tily/ncss-cookbooks"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Chef の Cookbooks を一発で NIFTYCloud クラウドストレージにアップロードするコマンド}
+  gem.description = %Q{Chef の Cookbooks を一発で NIFTYCloud クラウドストレージにアップロードするコマンド}
   gem.email = "tily05@gmail.com"
   gem.authors = ["tily"]
   # dependencies defined in Gemfile
