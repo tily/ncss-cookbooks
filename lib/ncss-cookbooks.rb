@@ -28,7 +28,7 @@ class NcssCookbooks < Thor
     unless bucket.exists?
       abort "Error: Bucket #{bucket_name} does not exist."
     end
-    object = bucket.objects["#{version}/cookbooks.tgz"]
+    object = bucket.objects["v#{version}/cookbooks.tgz"]
 
     Dir.mktmpdir('ncss-cookbooks') do |dir|
       FileUtils.mkdir_p("#{dir}/cookbooks/")
