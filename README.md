@@ -39,8 +39,8 @@ ncss-cookbooks create でバケットを作成します。
 ncss-cookbooks upload で作成したバケットに cookbooks をアップロードします。
 
     $ ncss-cookbooks upload my-bucket
-    https://my-bucket.ncss.nifty.com/0.0.0/cookbooks.tgz
+    https://my-bucket.ncss.nifty.com/v0.0.0/cookbooks.tgz
 
 発行された URL は chef-solo の -r オプションで利用することができます。
 
-    $ chef-solo -j node.json -r https://my-bucket.ncss.nifty.com/0.0.0/cookbooks.tgz
+    $ chef-solo -j node.json -r https://my-bucket.ncss.nifty.com/v0.0.0/cookbooks.tgz
