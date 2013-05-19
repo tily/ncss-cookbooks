@@ -19,11 +19,11 @@ class NcssCookbooks < Thor
   desc 'upload <bucket>', 'upload . to ncss bucket'
   option :verbose
   def upload(bucket_name)
-    pwd = Dir.pwd
-    unless File.exists?("#{pwd}/VERSION") || File.readble?("#{pwd}/VERSION")
+    @pwd = Dir.pwd
+    unless File.exists?("#{@pwd}/VERSION") || File.readble?("#{@pwd}/VERSION")
       abort "Error: VERSION file does not exists."
     end
-    version = File.read("#{pwd}/VERSION").chomp
+    version = File.read("#{@pwd}/VERSION").chomp
     puts "Version is v#{version}"
 
     bucket = ncss.buckets[bucket_name]
@@ -68,5 +68,17 @@ class NcssCookbooks < Thor
       :secret_access_key => options[:secret_access_key] || ENV['SECRET_ACCESS_KEY'] || HighLine.new.ask('Secret Access Key: '),
       :s3_endpoint => 'ncss.nifty.com'
     )
+  end
+
+  def pwd_files
+    files = Dir["{#{@pwd}/*,#{@pwd}/.*}"]
+    files.reject do |file|
+      if FileTest.directory?(file) && %w(.git .svn).include?(File.basename(file))
+        puts "  Excluded #{file}"
+        true
+      elsif %w(. ..).include?(File.basename(file))
+        true
+      end
+    end
   end
 end
