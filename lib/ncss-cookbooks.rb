@@ -32,7 +32,7 @@ class NcssCookbooks < Thor
     end
     object = bucket.objects["v#{version}/cookbooks.tgz"]
 
-    Dir.mktmpdir('ncss-cookbooks') do |dir|
+    Dir.mktmpdir('ncss-cookbooks-') do |dir|
       puts "Creating directory #{dir}/cookbooks/"
       FileUtils.mkdir_p("#{dir}/cookbooks/")
 
