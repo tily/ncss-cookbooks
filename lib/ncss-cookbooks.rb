@@ -11,12 +11,12 @@ class NcssCookbooks < Thor
   class_option :access_key_id, :alias => '-a'
   class_option :secret_access_key, :alias => '-s'
 
-  desc 'create <bucket>', 'create ncss bucket'
+  desc 'create <bucket_name>', 'create ncss bucket'
   def create(bucket_name)
     ncss.buckets.create(bucket_name)
   end
 
-  desc 'upload <bucket>', 'upload . to ncss bucket'
+  desc 'upload <bucket_name>', 'upload . to ncss bucket'
   option :verbose
   def upload(bucket_name)
     @pwd = Dir.pwd
