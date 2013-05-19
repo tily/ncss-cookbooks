@@ -39,7 +39,7 @@ ncss-cookbooks create でバケットを作成します。
 
 ncss-cookbooks upload で作成したバケットに cookbooks をアップロードします。
 
-    $ ruby bin/ncss-cookbooks upload my-bucket
+    $ ncss-cookbooks upload my-bucket
     Version is v0.0.1
     Creating directory /tmp/ncss-cookbooks-20130519-30448-2im9m1/cookbooks/
     Copying files from /home/tily/dev/ncss-cookbooks to /tmp/ncss-cookbooks-20130519-30448-2im9m1/cookbooks/
