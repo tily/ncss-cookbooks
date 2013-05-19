@@ -8,6 +8,18 @@ Chef の Cookbooks を一発で NIFTYCloud クラウドストレージにアッ�
 
     gem install ncss-cookbooks
 
+## コマンド一覧
+
+    $ ncss-cookbooks  
+    Commands:
+      ncss-cookbooks create <bucket_name>  # create ncss bucket
+      ncss-cookbooks help [COMMAND]        # Describe available commands or one specific command
+      ncss-cookbooks upload <bucket_name>  # upload . to ncss bucket
+    
+    Options:
+      [--access-key-id=ACCESS_KEY_ID]          
+      [--secret-access-key=SECRET_ACCESS_KEY]  
+
 ## 使い方
 
 まずはアップロードしたい cookbooks を用意します。
