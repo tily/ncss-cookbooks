@@ -58,6 +58,7 @@ class NcssCookbooks < Thor
     end
 
     puts "Uploaded to " + object.url_for(:read).to_s.gsub(/\?(.+)$/, '')
+    FileUtils.cd(@pwd) # release tmpdir for windows platform
   end
 
   private
