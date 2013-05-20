@@ -10,6 +10,7 @@ require 'archive/tar/minitar'
 class NcssCookbooks < Thor
   class_option :access_key_id, :alias => '-a'
   class_option :secret_access_key, :alias => '-s'
+  class_option :http_proxy, :alias => '-p'
 
   desc 'create <bucket_name>', 'create ncss bucket'
   def create(bucket_name)
@@ -66,7 +67,8 @@ class NcssCookbooks < Thor
     @ncss ||= AWS::S3.new(
       :access_key_id => options[:access_key_id] || ENV['ACCESS_KEY_ID'] || HighLine.new.ask('Access Key Id: '),
       :secret_access_key => options[:secret_access_key] || ENV['SECRET_ACCESS_KEY'] || HighLine.new.ask('Secret Access Key: '),
-      :s3_endpoint => 'ncss.nifty.com'
+      :s3_endpoint => 'ncss.nifty.com',
+      :proxy_uri => options[:http_proxy] || ENV['HTTP_PROXY'] || nil
     )
   end
 
